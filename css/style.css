@@ -102,7 +102,7 @@ main {
     height: 180px;
     margin: 0 auto 20px auto;
     position: relative;
-    background-color: var(--vinyl-black);
+    background-color: #1A1A1A; /* INI KOD UNTUK WARNA HITAM PEKAT */
     border-radius: 50%;
     display: flex;
     align-items: center;
