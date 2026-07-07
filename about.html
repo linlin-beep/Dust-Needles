@@ -52,18 +52,27 @@
             color: #1a1a1a;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #666;
-            margin-left: 20px;
-            font-weight: 500;
-            transition: color 0.3s;
+        /* Navigasi Menggunakan Unordered List (UL) */
+        #nav-links {
+            display: flex;
+            list-style: none;
         }
 
-        .nav-links a.active {
+        #nav-links li {
+            margin-left: 20px;
+        }
+
+        #nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding-bottom: 2px;
+        }
+
+        #nav-links a:hover, #nav-links a.active {
             color: #000;
             border-bottom: 2px solid #000;
-            padding-bottom: 2px;
         }
 
         /* Kandungan Utama (Layout 2 Column) */
@@ -75,6 +84,17 @@
         }
 
         @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            #nav-links {
+                padding: 0;
+            }
+            #nav-links li {
+                margin: 0 10px;
+            }
             .content {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -99,7 +119,6 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            /* Ini bahagian yang buat dia berpusing tanpa henti */
             animation: spin 6s linear infinite; 
         }
 
@@ -118,7 +137,7 @@
             width: 90px;
             height: 90px;
             border-radius: 50%;
-            background-color: #d4af37; /* Warna emas vintage */
+            background-color: #d4af37;
             border: 4px solid #111;
             display: flex;
             flex-direction: column;
@@ -129,13 +148,16 @@
             font-weight: bold;
             font-size: 11px;
             box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+            padding: 5px;
+            overflow: hidden;
         }
 
         .vinyl-center span {
-            font-size: 9px;
+            font-size: 8px;
             font-weight: normal;
             opacity: 0.8;
             margin-top: 2px;
+            line-height: 1;
         }
 
         /* Lubang Tengah */
@@ -191,40 +213,42 @@
 </head>
 
 <body>
+
     <div class="about-container">
-  <nav>
-            <ul id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="playlists.html">Playlists</a></li>
-                <li><a href="about.html" class="active">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        </div>
+        <header class="header">
+            <div class="logo">Dust & Needles</div>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="playlists.html">Playlists</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <div class="content">
             <div class="vinyl-wrapper">
                 <div class="vinyl">
                     <div class="vinyl-center">
                         ABOUT
-                        <span>The Dust & Needles Story</span>
+                        <span>Dust & Needles</span>
                     </div>
                 </div>
             </div>
 
             <div class="about-text">
                 <h2>Dust & Needles Archive</h2>
-                <p>We are a group of music enthusiasts dedicated to curating the best vintage vibes. Dust & Needles was born out of a profound love for analog sound in a digital world. We wanted to recreate the feeling of digging through crates of old records, finding a hidden gem, and letting the needle drop. </p>
+                <p>We are a group of music enthusiasts dedicated to curating the best vintage vibes. Dust & Needles was born out of a profound love for analog sound in a digital world. We wanted to recreate the feeling of digging through crates of old records, finding a hidden gem, and letting the needle drop.</p>
                 <p>Built with passion. Our team aims to provide a seamless, distraction-free environment to discover mood-based playlists.</p>
-                <p> Connect With Us. Enjoy our curated playlists directly on Spotify!</p>
+                <p>Connect With Us. Enjoy our curated playlists directly on Spotify!</p>
             </div>
         </div>
 
-        <div class="footer">
-            Created with passion by Dust Needles © 2026
-        </div>
+        <footer class="footer">
+            Created with passion by Dust & Needles © 2026
+        </footer>
     </div>
 
 </body>
 </html>
-
