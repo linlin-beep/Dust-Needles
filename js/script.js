@@ -6,13 +6,13 @@ function toggleMenu() {
 
 // 2. Fungsi Animasi Piring Hitam (Vinyl) & Pemain Spotify
 function playSpotify(playlistId, title, labelColor) {
-  const vinyl = document.getElementById('vinyl-record');
+  const vinyls = document.querySelectorAll('#vinyl-record, .vinyl-grooves, .vinyl');
   const vinylLabel = document.getElementById('vinyl-label');
   const statusText = document.getElementById('status-text');
   const spotifyIframe = document.getElementById('spotify-player');
 
   // Pastikan kod ini hanya jalan jika elemen vinyl & iframe wujud
-  if (!vinyl || !spotifyIframe) {
+  if (vinyls.length === 0 || !spotifyIframe) {
     return;
   }
 
@@ -32,7 +32,10 @@ function playSpotify(playlistId, title, labelColor) {
     vinylLabel.style.backgroundColor = labelColor;
   }
 
-  // Menghidupkan semula animasi pusingan piring hitam
-  void vinyl.offsetWidth; // Trik untuk paksa browser faham reset animasi
-  vinyl.classList.add('spin');
+ // Menghidupkan semula animasi pusingan untuk kesemua piring hitam
+  vinyls.forEach(v => {
+    v.classList.remove('spin');
+    void v.offsetWidth; // Trik untuk paksa browser faham reset animasi
+    v.classList.add('spin');
+  });
 }
