@@ -1,233 +1,211 @@
 /* =========================================
-DUST & NEEDLES | VINTAGE THEME CSS
+   DUST & NEEDLES | VINTAGE THEME CSS
 ========================================= */
 
 :root {
-/* Vintage Color Palette */
---bg-cream: #F4EBD0;
---bg-paper: #E6D5B8;
---text-dark: #3E2723;
---accent-gold: #8B5A2B;
---accent-hover: #633E1D;
---vinyl-black: #1A1A1A;
---border-color: #D4C3A3;
-
-/* Typography */
---font-heading: 'Playfair Display', serif;
---font-body: 'Lora', serif;
-
-
+    /* Vintage Color Palette */
+    --bg-cream: #F4EBD0; 
+    --bg-paper: #E6D5B8; 
+    --text-dark: #3E2723; 
+    --accent-gold: #8B5A2B; 
+    --accent-hover: #633E1D;
+    --vinyl-black: #1A1A1A;
+    --border-color: #D4C3A3;
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lora', serif;
 }
 
-/* --- CUSTOM SCROLLBAR (Sisi Kanan) --- */
-::-webkit-scrollbar {
-width: 14px;
-}
-::-webkit-scrollbar-track {
-background: var(--bg-cream);
-border-left: 1px solid var(--border-color);
-}
-::-webkit-scrollbar-thumb {
-background: var(--accent-gold);
-border-radius: 10px;
-border: 3px solid var(--bg-cream);
-}
-::-webkit-scrollbar-thumb:hover {
-background: var(--text-dark);
-}
+/* --- CUSTOM SCROLLBAR --- */
+::-webkit-scrollbar { width: 14px; }
+::-webkit-scrollbar-track { background: var(--bg-cream); border-left: 1px solid var(--border-color); }
+::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 10px; border: 3px solid var(--bg-cream); }
+::-webkit-scrollbar-thumb:hover { background: var(--text-dark); }
 
-{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-scroll-behavior: smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-font-family: var(--font-body);
-background-color: var(--bg-cream);
-color: var(--text-dark);
-line-height: 1.6;
-display: flex;
-flex-direction: column;
-min-height: 100vh;
+    font-family: var(--font-body);
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* --- NAVIGATION BAR --- /
+/* --- NAVIGATION BAR (MENU DI TENGAH) --- */
 header {
-background-color: var(--bg-paper);
-border-bottom: 2px solid var(--accent-gold);
-padding: 20px 5%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-/ position: sticky telah dibuang supaya menu tak follow ke bawah */
+    background-color: var(--bg-paper);
+    border-bottom: 2px solid var(--accent-gold);
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    position: relative; /* Ini penting untuk menu ke tengah */
+    justify-content: center;
 }
 
 .logo {
-font-family: var(--font-heading);
-font-size: 28px;
-font-weight: bold;
-color: var(--text-dark);
-text-decoration: none;
-display: flex;
-align-items: center;
-gap: 10px;
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--text-dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: absolute; /* Tolak logo ke kiri */
+    left: 5%;
 }
 
 nav ul {
-list-style: none;
-display: flex;
-gap: 25px;
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Jarak antara menu */
 }
 
 nav a {
-color: var(--text-dark);
-text-decoration: none;
-font-weight: 500;
-font-size: 16px;
-text-transform: uppercase;
-letter-spacing: 1px;
-transition: color 0.3s, border-bottom 0.3s;
-padding-bottom: 5px;
-border-bottom: 2px solid transparent;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
 }
 
 nav a:hover, nav a.active {
-color: var(--accent-gold);
-border-bottom: 2px solid var(--accent-gold);
+    color: var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
 }
 
 .mobile-menu-btn {
-display: none;
-background: none;
-border: none;
-font-size: 24px;
-cursor: pointer;
-color: var(--text-dark);
+    display: none;
 }
 
-/* --- HERO SECTION (GAMBAR BESAR MUKA DEPAN) --- /
+/* --- HERO SECTION (MUKA DEPAN) --- */
+/* DI SINI LETAKNYA GAMBAR BACKGROUND */
 .hero-section {
-background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
-min-height: 70vh; / Ketinggian gambar */
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-border-bottom: 5px solid var(--accent-gold);
+    /* Saya masukkan link gambar Piring Hitam (Vinyl) dari Unsplash */
+    background-image: url('https://images.unsplash.com/photo-1614613535308-eb51bd3d2c17?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 5px solid var(--accent-gold);
 }
 
+/* Kotak Gelap Atas Gambar Supaya Tulisan Jelas */
 .hero-overlay {
-background-color: rgba(62, 39, 35, 0.85); /* Coklat Gelap Transparent */
-padding: 50px;
-border-radius: 15px;
-color: var(--bg-cream);
-box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-max-width: 700px;
-margin: 20px;
-border: 1px solid rgba(255,255,255,0.1);
+    background-color: rgba(62, 39, 35, 0.85); /* Coklat Gelap Transparent */
+    padding: 50px;
+    border-radius: 15px;
+    color: var(--bg-cream);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    max-width: 700px;
+    margin: 20px;
 }
 
 .hero-overlay h1 {
-font-family: var(--font-heading);
-font-size: 3.5rem;
-margin-bottom: 15px;
-color: #fff;
-letter-spacing: 2px;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #fff;
 }
 
 /* --- MAIN CONTENT AREA --- */
 main {
-flex: 1;
-width: 100%;
+    flex: 1;
+    width: 100%;
+}
+
+.content-wrapper {
+    padding: 50px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .section-title {
-font-family: var(--font-heading);
-font-size: 36px;
-text-align: center;
-margin: 50px 0 30px 0;
-color: var(--text-dark);
-}
-
-.section-title::after {
-content: '';
-width: 80px;
-height: 3px;
-background-color: var(--accent-gold);
-display: block;
-margin: 15px auto 0;
+    font-family: var(--font-heading);
+    font-size: 36px;
+    text-align: center;
+    margin: 40px 0 30px 0;
+    color: var(--text-dark);
 }
 
 .text-content {
-font-size: 18px;
-text-align: center;
-line-height: 1.8;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.8;
 }
 
 /* --- VINYL PLAYER SECTION --- */
 .player-section {
-background: linear-gradient(135deg, #d7c4a1, #c7b08b);
-padding: 40px 20px;
-text-align: center;
-border-top: 4px double var(--accent-gold);
-border-bottom: 4px double var(--accent-gold);
-margin-bottom: 50px;
-display: flex;
-flex-direction: column;
-align-items: center;
+    background: linear-gradient(135deg, #d7c4a1, #c7b08b);
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 4px double var(--accent-gold);
+    border-bottom: 4px double var(--accent-gold);
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .vinyl-container {
-width: 180px;
-height: 180px;
-margin: 0 auto 20px auto;
-position: relative;
-background-color: #1A1A1A; /* WARNA HITAM PEKAT */
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 10px 25px rgba(0,0,0,0.4), inset 0 0 15px rgba(255,255,255,0.15);
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px auto;
+    position: relative;
+    background-color: #1A1A1A; /* WARNA HITAM PEKAT */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4), inset 0 0 15px rgba(255,255,255,0.15);
 }
 
 .vinyl-label {
-width: 60px;
-height: 60px;
-background-color: var(--accent-gold);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-border: 2px solid #333;
-transition: background-color 0.5s;
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #333;
+    transition: background-color 0.5s;
 }
 
 .vinyl-hole {
-width: 10px;
-height: 10px;
-background-color: var(--bg-cream);
-border-radius: 50%;
-box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+    width: 10px;
+    height: 10px;
+    background-color: var(--bg-cream);
+    border-radius: 50%;
 }
 
 .vinyl-grooves {
-position: absolute;
-width: 160px;
-height: 160px;
-border-radius: 50%;
-border: 1px solid rgba(255,255,255,0.1);
-pointer-events: none;
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 .vinyl-grooves::before, .vinyl-grooves::after {
-content: '';
-position: absolute;
-border-radius: 50%;
-border: 1px solid rgba(255,255,255,0.05);
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.05);
 }
 .vinyl-grooves::before { top: 10px; left: 10px; right: 10px; bottom: 10px; }
 .vinyl-grooves::after { top: 25px; left: 25px; right: 25px; bottom: 25px; }
@@ -235,156 +213,98 @@ border: 1px solid rgba(255,255,255,0.05);
 .spin { animation: spinRecord 2s linear infinite; }
 @keyframes spinRecord { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-.now-playing-title {
-font-family: var(--font-heading);
-font-size: 22px;
-margin-bottom: 15px;
-color: var(--text-dark);
-font-style: italic;
-}
+.now-playing-title { font-family: var(--font-heading); font-size: 22px; margin-bottom: 15px; font-style: italic; }
 
 .spotify-container {
-width: 100%;
-max-width: 600px;
-height: 0;
-transition: height 0.3s ease;
-overflow: hidden;
-border-radius: 12px;
-box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 100%; max-width: 600px; height: 0; transition: height 0.3s ease; overflow: hidden; border-radius: 12px;
 }
 .spotify-container.active { height: 152px; }
 
 /* --- PLAYLIST GRID --- */
 .playlist-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-gap: 30px;
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 5% 50px 5%;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;
 }
-
 .playlist-card {
-background-color: var(--bg-paper);
-border: 1px solid var(--border-color);
-border-radius: 12px;
-padding: 25px;
-text-align: center;
-box-shadow: 5px 5px 0px rgba(139, 90, 43, 0.15);
-transition: transform 0.2s, box-shadow 0.2s;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+    background-color: var(--bg-paper); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; text-align: center;
+    box-shadow: 5px 5px 0px rgba(139, 90, 43, 0.15); transition: transform 0.2s, box-shadow 0.2s;
 }
-
-.playlist-card:hover {
-transform: translateY(-5px);
-box-shadow: 8px 8px 0px rgba(139, 90, 43, 0.3);
-}
-
+.playlist-card:hover { transform: translateY(-5px); box-shadow: 8px 8px 0px rgba(139, 90, 43, 0.3); }
 .playlist-icon { font-size: 40px; margin-bottom: 15px; }
 .playlist-card h3 { font-family: var(--font-heading); font-size: 24px; margin-bottom: 10px; }
-.playlist-card p { font-size: 15px; opacity: 0.85; margin-bottom: 25px; flex-grow: 1; }
-
-.play-btn {
-background-color: var(--text-dark);
-color: var(--bg-cream);
-border: 2px solid var(--text-dark);
-padding: 12px 20px;
-font-family: var(--font-body);
-font-size: 16px;
-font-weight: bold;
-border-radius: 30px;
-cursor: pointer;
-transition: all 0.3s;
-width: 100%;
-}
+.playlist-card p { font-size: 15px; opacity: 0.85; margin-bottom: 25px; }
+.play-btn { background-color: var(--text-dark); color: var(--bg-cream); border: 2px solid var(--text-dark); padding: 12px 20px; border-radius: 30px; cursor: pointer; transition: all 0.3s; width: 100%; font-weight: bold; }
 .play-btn:hover { background-color: transparent; color: var(--text-dark); }
 
-/* --- BUTTONS & FORMS --- */
-.submit-btn {
-background-color: var(--accent-gold);
-color: white;
-border: none;
-padding: 15px 30px;
-font-size: 18px;
-font-weight: bold;
-border-radius: 6px;
-cursor: pointer;
-transition: background 0.3s;
-text-decoration: none;
-display: inline-block;
-}
-.submit-btn:hover { background-color: var(--accent-hover); }
-
-.contact-form {
-max-width: 600px;
-margin: 0 auto 50px auto;
-background: var(--bg-paper);
-padding: 30px;
-border-radius: 12px;
-border: 1px solid var(--border-color);
-}
+/* --- FORMS --- */
+.contact-form { max-width: 600px; margin: 0 auto; background: var(--bg-paper); padding: 30px; border-radius: 12px; border: 1px solid var(--border-color); }
 .form-group { margin-bottom: 20px; text-align: left; }
 .form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
-.form-group input, .form-group textarea {
-width: 100%; padding: 12px; border: 1px solid var(--border-color);
-background-color: var(--bg-cream); border-radius: 6px; font-family: var(--font-body); font-size: 16px;
-}
+.form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid var(--border-color); background-color: var(--bg-cream); border-radius: 6px; font-family: var(--font-body); font-size: 16px; }
 
-/* --- FOOTER PREMIUM --- */
+.submit-btn { background-color: var(--accent-gold); color: white; border: none; padding: 15px 30px; font-size: 18px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.3s; text-decoration: none; display: inline-block; }
+.submit-btn:hover { background-color: var(--accent-hover); }
+
+/* --- FOOTER PREMIUM (Dikecilkan) --- */
 .premium-footer {
-background-color: var(--text-dark);
-color: var(--bg-cream);
-padding: 50px 5% 20px 5%;
-margin-top: auto;
-border-top: 4px solid var(--accent-gold);
+    background-color: var(--text-dark); color: var(--bg-cream);
+    padding: 30px 5% 15px 5%; /* Saiz atas bawah dikecilkan */
+    margin-top: auto; border-top: 4px solid var(--accent-gold);
 }
-
-.footer-container {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 40px;
-max-width: 1200px;
-margin: 0 auto;
-text-align: left;
-}
-
-.footer-container h3 {
-font-family: var(--font-heading);
-color: var(--accent-gold);
-margin-bottom: 20px;
-font-size: 1.5rem;
-}
-
+.footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; text-align: left; }
+.footer-container h3 { font-family: var(--font-heading); color: var(--accent-gold); margin-bottom: 15px; font-size: 1.2rem; }
 .footer-links ul { list-style: none; padding: 0; }
-.footer-links li { margin-bottom: 10px; }
+.footer-links li { margin-bottom: 8px; }
 .footer-links a { color: var(--bg-cream); text-decoration: none; transition: 0.3s; opacity: 0.8; }
 .footer-links a:hover { color: var(--accent-gold); opacity: 1; padding-left: 5px; }
+.footer-bottom { text-align: center; padding-top: 15px; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.7; }
 
-.footer-bottom {
-text-align: center;
-padding-top: 30px;
-margin-top: 40px;
-border-top: 1px solid rgba(255,255,255,0.1);
-font-size: 0.9rem;
-opacity: 0.7;
-}
-
-/* --- RESPONSIVE --- */
+/* Responsive untuk fon bimbit */
 @media (max-width: 768px) {
-.mobile-menu-btn { display: block; }
-nav ul {
-display: none;
-flex-direction: column;
-position: absolute;
-top: 70px;
-left: 0;
-width: 100%;
-background-color: var(--bg-paper);
-padding: 20px;
-border-bottom: 2px solid var(--accent-gold);
-text-align: center;
+    header { justify-content: space-between; }
+    .logo { position: static; }
+    .mobile-menu-btn { display: block; background: none; border: none; font-size: 24px; color: var(--text-dark); cursor: pointer; }
+    nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-paper); padding: 20px; z-index: 10; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    nav ul.show { display: flex; }
 }
-nav ul.show { display: flex; }
-}
+```eof
+
+---
+
+### 2. KEMAS KINI MUKA DEPAN (Gambar tak hilang lagi!)
+Buka fail `index.html` anda dan gantikan dengan kod ini.
+
+http://googleusercontent.com/immersive_entry_chip/0
+
+---
+
+### 3. RAHSIA BORANG CONTACT (Netlify + Auto-Reply)
+
+Anda bertanya macam mana Admin nak dapat data, dan User nak dapat emel. Disebabkan akaun Netlify percuma tidak boleh menghantar emel *auto-reply* kepada pelanggan, kita akan gunakan satu servis pintar bernama **FormSubmit**!
+
+Buka fail `contact.html` anda. Gantikan **KOTAK `<form>` SAHAJA** dengan kod ini:
+
+```html
+<!-- PADAM <form data-netlify="true"> YANG LAMA, GANTI DENGAN INI -->
+<form action="https://formsubmit.co/saiyidahyusofs.work@gmail.com" method="POST">
+    
+    <!-- Ini fungsi auto-reply kepada user -->
+    <input type="hidden" name="_autoresponse" value="Hi! Terima kasih kerana menghubungi Dust & Needles. Kami telah menerima mesej anda dan akan membalas segera.">
+    
+    <!-- Ini fungsi supaya selepas hantar, page tak pergi ke website lain -->
+    <input type="hidden" name="_next" value="https://dust-needles.netlify.app/contact.html">
+    <input type="hidden" name="_captcha" value="false">
+
+    <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" name="name" id="name" required placeholder="John Doe">
+    </div>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" required placeholder="john@example.com">
+    </div>
+    <div class="form-group">
+        <label for="message">Message / Record Request</label>
+        <textarea name="message" id="message" rows="5" required placeholder="I would love a playlist for..."></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Send Message</button>
+</form>
