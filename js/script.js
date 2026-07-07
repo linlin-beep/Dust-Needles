@@ -6,35 +6,33 @@ function toggleMenu() {
 
 // 2. Fungsi Animasi Piring Hitam (Vinyl) & Pemain Spotify
 function playSpotify(playlistId, title, labelColor) {
-    const vinyl = document.getElementById('vinyl-record');
-    const vinylLabel = document.getElementById('vinyl-label');
-    const statusText = document.getElementById('status-text');
-    const spotifyWrapper = document.getElementById('spotify-wrapper');
-    const spotifyIframe = document.getElementById('spotify-player');
+  const vinyl = document.getElementById('vinyl-record');
+  const vinylLabel = document.getElementById('vinyl-label');
+  const statusText = document.getElementById('status-text');
+  const spotifyIframe = document.getElementById('spotify-player');
 
-    // Pastikan kod ini hanya jalan jika elemen vinyl wujud di page semasa
-    if (!vinyl || !spotifyIframe) {
-        return;
-    }
+  // Pastikan kod ini hanya jalan jika elemen vinyl & iframe wujud
+  if (!vinyl || !spotifyIframe) {
+    return;
+  }
 
-    // Berhentikan pusingan seketika untuk reset
-    vinyl.classList.remove('spin');
-    
-    // Tukar tajuk dan warna label vinyl di tengah
-    statusText.innerHTML = `Now Spinning: <strong>${title}</strong> 🎵`;
+  // Berhentikan pusingan seketika untuk reset animasi
+  vinyl.classList.remove('spin');
+
+  // Menukar link embed Spotify secara dinamik mengikut playlistId yang diklik
+  spotifyIframe.src = `https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator`;
+
+  // Menukar teks tajuk lagu di atas piring hitam
+  if (statusText) {
+    statusText.innerText = `Playing: ${title}`;
+  }
+
+  // Menukar warna bahagian tengah piring hitam (vinyl label)
+  if (vinylLabel && labelColor) {
     vinylLabel.style.backgroundColor = labelColor;
-    
-    // Masukkan link Spotify yang betul ke dalam iframe
-    spotifyIframe.src = `https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0`;
-    
-    // Paparkan kotak Spotify ke skrin
-    spotifyWrapper.classList.add('active');
+  }
 
-    // Mulakan animasi vinyl selepas sedikit delay supaya lancar
-    setTimeout(() => {
-        vinyl.classList.add('spin');
-    }, 50);
-
-    // Scroll sikit ke atas supaya pengguna nampak player
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Menghidupkan semula animasi pusingan piring hitam
+  void vinyl.offsetWidth; // Trik untuk paksa browser faham reset animasi
+  vinyl.classList.add('spin');
 }
