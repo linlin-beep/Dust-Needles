@@ -10,25 +10,25 @@
     <!-- KOD TAMBAHAN KHAS UNTUK BACKGROUND BERGAMBAR PAGE INI SAHAJA -->
     <style>
         body {
-            /* Gambar background baharu pilihan anda dengan lapisan krim lutsinar (overlay) supaya teks kekal jelas dibaca */
-            background-image: linear-gradient(rgba(244, 235, 208, 0.85), rgba(244, 235, 208, 0.95)), url('https://i.pinimg.com/736x/ec/16/90/ec1690b2811405dfbdc05f28e123c6c6.jpg');
+            /* Kepekatan warna krim dinaikkan kepada 0.93 dan 0.97 (tidak terlalu lutsinar) */
+            background-image: linear-gradient(rgba(244, 235, 208, 0.93), rgba(244, 235, 208, 0.97)), url('https://i.pinimg.com/736x/ec/16/90/ec1690b2811405dfbdc05f28e123c6c6.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed; /* Gambar kekal statik bila scroll ke bawah */
         }
         
-        /* Jadikan kotak player sedikit lutsinar (glass effect) */
+        /* Kotak player utama dibuat lebih padat warnanya */
         .player-section {
-            background: linear-gradient(135deg, rgba(215, 196, 161, 0.90), rgba(199, 176, 139, 0.90));
+            background: linear-gradient(135deg, rgba(215, 196, 161, 0.98), rgba(199, 176, 139, 0.98)) !important;
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             margin-top: 20px;
         }
 
+        /* Kotak kad lagu dibuat sepenuhnya padat (tidak lutsinar) */
         .playlist-card {
-            background-color: rgba(230, 213, 184, 0.95);
-            backdrop-filter: blur(5px);
+            background-color: rgba(230, 213, 184, 1) !important;
         }
     </style>
 </head>
