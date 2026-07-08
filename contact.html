@@ -7,57 +7,93 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-      <style>
         body {
-            background-image: url('https://i.pinimg.com/736x/d4/d2/54/d4d254378f0f0896022e39908cf6b41d.jpg');
+            background-image: url('https://i.pinimg.com/1200x/ec/8b/f7/ec8bf7c94e73e8db47d1950c84b60f38.jpg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
             background-attachment: fixed;
         }
-
-        /* Kod untuk menyembunyikan piring hitam lama dan labelnya */
-        .vinyl-medium, .vinyl-grooves-medium, .vinyl-label-medium, .vertical-text-label, .vinyl-hole {
-            display: none !important;
-        }
-
-        /* Kod khas untuk membuat gambar kaset anda menjadi bulatan dan berpusing */
-        .split-vinyl-side {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-
-        .split-vinyl-side::before {
-            content: '';
-            width: 300px; /* Saiz piring yang anda mahu */
-            height: 300px;
-            background-image: url('https://i.pinimg.com/736x/f7/01/c9/f701c9cadfd4b9fabfe94db6179a2f95.jpg') !important;
-            background-size: cover;
-            background-position: center;
-            border-radius: 50%; /* Membuat gambar jadi bulatan sempurna */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sedikit bayang untuk kesan 3D */
-            animation: spinCustom 20s linear infinite; /* Memulakan animasi pusingan */
-            position: absolute;
-        }
-
-        /* Animasi pusingan 360 darjah */
-        @keyframes spinCustom {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Pastikan pembungkus kad tidak menutup latar belakang renda */
-        .split-card {
-            background-color: transparent !important;
-            border: 1px solid rgba(255,255,255,0.2) !important;
-        }
-        
-        .split-content-side {
-            background-color: var(--card-bg) !important;
-        }
     </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">📻 Dust & Needles</a>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="playlists.html">Playlists</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="split-card-wrapper">
+        <div class="split-card">
+            <div class="split-vinyl-side">
+                <div class="vinyl-medium spin">
+                    <div class="vinyl-grooves-medium"></div>
+                    <div class="vinyl-label-medium">
+                        <span class="vertical-text-label">CONTACT US</span>
+                        <div class="vinyl-hole" style="width: 12px; height: 12px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="split-content-side">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; color: var(--text-dark); margin-bottom: 10px;">Drop Us A Line</h2>
+                <p style="margin-bottom: 25px;">Got a playlist recommendation or want to report a broken link? Let us know!</p>
+                
+                <form action="https://formsubmit.co/saiyidahyusofs.work@gmail.com" method="POST" style="width: 100%;">
+                    <input type="hidden" name="_autoresponse" value="Hi! Terima kasih kerana menghubungi Dust & Needles. Kami telah menerima mesej anda dan akan membalas segera.">
+                    <input type="hidden" name="_next" value="https://dust-needles.netlify.app/contact.html">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="name" style="display: block; margin-bottom: 5px; font-weight: bold;">Your Name</label>
+                        <input type="text" name="name" id="name" required placeholder="John Doe" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid var(--border-color); background: var(--bg-paper);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email Address</label>
+                        <input type="email" name="email" id="email" required placeholder="john@example.com" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid var(--border-color); background: var(--bg-paper);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="message" style="display: block; margin-bottom: 5px; font-weight: bold;">Message</label>
+                        <textarea name="message" id="message" rows="4" required placeholder="I would love a playlist for..." style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid var(--border-color); background: var(--bg-paper);"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" style="width: 100%; padding: 12px; border-radius: 30px;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="premium-footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>📻 Dust & Needles</h3>
+                <p>Curating the best analog sounds for your daily moods. A space where vintage aesthetics meet modern curation.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="playlists.html">Playlists</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Connect With Us</h3>
+                <p>Enjoy our curated playlists directly on Spotify.</p>
+                <p style="margin-top: 10px; color: var(--accent-gold);">Email: hello@dustneedles.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dust & Needles. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
