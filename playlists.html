@@ -10,25 +10,24 @@
     <!-- KOD TAMBAHAN KHAS UNTUK BACKGROUND BERGAMBAR PAGE INI SAHAJA -->
     <style>
         body {
-            /* Kepekatan warna krim dinaikkan kepada 0.93 dan 0.97 (tidak terlalu lutsinar) */
-            background-image: linear-gradient(rgba(244, 235, 208, 0.93), rgba(244, 235, 208, 0.97)), url('https://i.pinimg.com/736x/ec/16/90/ec1690b2811405dfbdc05f28e123c6c6.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Gambar kekal statik bila scroll ke bawah */
+            /* Lapisan warna (linear-gradient) telah dibuang sepenuhnya untuk paparan gambar asli */
+            background-image: url('https://i.pinimg.com/736x/ec/16/90/ec1690b2811405dfbdc05f28e123c6c6.jpg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: fixed !important; /* Gambar kekal statik bila scroll ke bawah */
         }
         
-        /* Kotak player utama dibuat lebih padat warnanya */
+        /* Kotak player utama dibuat sepenuhnya padat (solid background) */
         .player-section {
-            background: linear-gradient(135deg, rgba(215, 196, 161, 0.98), rgba(199, 176, 139, 0.98)) !important;
+            background: #d7c4a1 !important; /* Warna krim pekat padat */
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-            backdrop-filter: blur(10px);
             border-radius: 20px;
             margin-top: 20px;
         }
 
-        /* Kotak kad lagu dibuat sepenuhnya padat (tidak lutsinar) */
+        /* Kotak kad lagu dibuat sepenuhnya padat (solid background) */
         .playlist-card {
-            background-color: rgba(230, 213, 184, 1) !important;
+            background-color: #e6d5b8 !important; /* Warna kad asal tanpa kesan lutsinar */
         }
     </style>
 </head>
